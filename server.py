@@ -8,7 +8,9 @@ def homepage():
         return render_template('index.html')
     else:
         name = request.form["name"]
-        return render_template('confirmado.html')
+        with open('ListaConvidados.txt', 'a') as arq:
+            arq.writelines(name + "\n")
+        return render_template('confirmado.html', name=name)
 
 
 if __name__ == "__main__":
