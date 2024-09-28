@@ -8,7 +8,7 @@ def homepage():
         return render_template('index.html')
     else:
         name = request.form["name"]
-        return name
+        return render_template('confirmado.html')
 
 
 if __name__ == "__main__":
